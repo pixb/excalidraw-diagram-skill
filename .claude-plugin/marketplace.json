@@ -1,0 +1,14 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "excalidraw-diagram-skill",
+  "owner": {
+    "name": "pix"
+  },
+  "plugins": [
+    {
+      "name": "excalidraw-diagram-skill",
+      "source": "./",
+      "description": "Generate Excalidraw diagrams from text content for Obsidian"
+    }
+  ]
+}

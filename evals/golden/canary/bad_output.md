@@ -1,0 +1,1 @@
+This is intentionally malformed content that should fail all checks. It has no frontmatter, no JSON, and is just plain text with "quotes" and (parentheses) that should not appear in a valid Excalidraw output.

@@ -1,0 +1,8 @@
+{
+  "name": "excalidraw-diagram-skill",
+  "version": "1.2.0",
+  "description": "Generate Excalidraw diagrams from text content for Obsidian",
+  "author": {
+    "name": "pix"
+  }
+}

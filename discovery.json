@@ -1,0 +1,96 @@
+{
+  "question": "How do I create visual diagrams from text content for my Obsidian notes?",
+  "trigger": [
+    "User asks to create a diagram, flowchart, mind map, or visual representation",
+    "User mentions Excalidraw or Obsidian diagram",
+    "User provides text content that needs visual structure"
+  ],
+  "decision": [
+    "Generate an Excalidraw diagram file from the provided content",
+    "Select the most appropriate diagram type for the content"
+  ],
+  "evidence": [
+    "Text content or topic description from the user",
+    "Excalidraw JSON schema reference",
+    "Obsidian ExcaliDraw plugin format requirements"
+  ],
+  "success_measure": "A valid .md file with Excalidraw JSON renders correctly in Obsidian ExcaliDraw view",
+  "outcome": "An Obsidian-ready .md file containing a complete Excalidraw diagram",
+  "intended_users": [
+    "Obsidian users who need visual diagrams",
+    "Content creators organizing information visually",
+    "Knowledge workers building visual notes"
+  ],
+  "input_types": [
+    "Text description",
+    "Structured content",
+    "Concept lists",
+    "Process descriptions"
+  ],
+  "output_artifacts": [
+    "Obsidian .md file with Excalidraw JSON"
+  ],
+  "use_cases": [
+    "Create flowcharts from process descriptions",
+    "Generate mind maps from concept lists",
+    "Build relationship diagrams from entity descriptions",
+    "Visualize timelines from event sequences"
+  ],
+  "examples": [
+    {
+      "invocation": "/excalidraw-diagram-skill Create a flowchart for content creation workflow",
+      "description": "Generate a flowchart diagram from a process description"
+    },
+    {
+      "invocation": "/excalidraw-diagram-skill Draw a mind map for our product features",
+      "description": "Generate a mind map from feature descriptions"
+    }
+  ],
+  "permissions_systems": [
+    "Write files to the current working directory"
+  ],
+  "typical_completion_time": "1-3 minutes",
+  "compatibility": {
+    "declared": ["opencode", "claude-code", "cursor", "codex", "gemini", "goose", "cline", "roo-code", "kilo-code"],
+    "certified": []
+  },
+  "environment": {
+    "documentation_sources": ["Excalidraw JSON schema", "Obsidian ExcaliDraw plugin documentation"],
+    "data_sources": ["User-provided text content"],
+    "required_capabilities": ["Write Markdown files", "Generate valid JSON"],
+    "readiness_checks": ["Output directory is writable"]
+  },
+  "risk": {
+    "tier": "low",
+    "permissions": ["Write .md files to current directory"],
+    "mutation_boundary": "read-only",
+    "approval_required": []
+  },
+  "software_mutation": {
+    "applies": false
+  },
+  "data_interfaces": {
+    "applies": false
+  },
+  "semantic_recon": {
+    "applies": false
+  },
+  "semantic_contract": {
+    "applies": false
+  },
+  "routing_tests": {
+    "should_trigger": [
+      "Create a diagram from this text",
+      "Draw a flowchart for this process",
+      "Generate an Excalidraw mind map",
+      "画一个流程图",
+      "帮我做一个思维导图"
+    ],
+    "should_not_trigger": [
+      "Write a Python script",
+      "Analyze this CSV data",
+      "Deploy to production"
+    ]
+  },
+  "support_tier": "supported"
+}

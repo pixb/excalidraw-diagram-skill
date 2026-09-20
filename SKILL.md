@@ -1,11 +1,23 @@
 ---
 name: excalidraw-diagram-skill
 description: Generate Excalidraw diagrams from text content for Obsidian. Use when user asks to create diagrams, flowcharts, mind maps, or visual representations in Excalidraw format. Triggers on "Excalidraw", "画图", "流程图", "思维导图", "可视化", "diagram".
+license: MIT
+activation: /excalidraw-diagram-skill
+provenance:
+  maintainer: pix
+  version: 1.2.0
+  created: 2026-09-21
+  source_references:
+    - references/excalidraw-schema.md
 metadata:
-  version: 1.1.0
+  version: 1.2.0
+  author: pix
+  created: 2026-09-21
+  last_reviewed: 2026-09-21
+  review_interval_days: 90
 ---
 
-# Excalidraw Diagram Generator
+# /excalidraw-diagram-skill
 
 Create Excalidraw diagrams from text content, outputting Obsidian-ready `.md` files.
 
@@ -90,7 +102,7 @@ tags: [excalidraw]
 - **强调/重点**：`#f59e0b`（金色）
 - **其他配色**：建议使用和谐的配色方案，避免过多颜色
 
-参考：[references/excalidraw-schema.md](references/excalidraw-schema.md)
+Read [references/excalidraw-schema.md](references/excalidraw-schema.md) for the complete Excalidraw JSON schema.
 
 ## JSON Structure
 
@@ -326,3 +338,15 @@ Axton_2026商业模式.relationship.md
 
 需要调整吗？比如改变布局、添加更多细节或调整配色，直接告诉我！
 ```
+
+---
+
+## Gotchas
+
+- Text content must replace `"` with `『』` and `()` with `「」` — these characters break Excalidraw rendering in Obsidian
+- `## Text Elements` section in the output Markdown MUST be left empty (only `%%` delimiters) — the Obsidian ExcaliDraw plugin auto-fills text from JSON
+- All text elements MUST use `fontFamily: 5` (Excalifont) — other font values produce incorrect rendering
+- JSON must be valid and pass syntax check — malformed JSON silently breaks the diagram in Obsidian
+- Canvas coordinates should stay within 0-1200 x 0-800 range — elements outside this area may not render
+- Each element requires a unique `id` string — duplicate IDs cause binding failures
+- The `appState` and `files: {}` fields are required even when empty — omitting them produces a blank diagram
